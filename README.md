@@ -32,6 +32,9 @@
     - Copy the host URL and paste it into a browser (ideally Google Chrome).
 
 2. **Creating Accounts**:
+    - First a super user has to be made to create the groups in Django Admin dashboard. Create the superuser by using a shell/CLI such as windows CMD or git bash. 
+    - Create the following groups: Head Office, District Office, Branch Office.
+    - Adjust permissions for each group.
     - A Head Office user is created using the website. Since multiple companies might use this website, the initial user registering on the site has the option to choose Head Office as their group.
     - Once an account is created, another user can log in using those credentials.
 
