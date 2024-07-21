@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% block title %}View Created Users{% endblock %}
+
+{% block content %}
+    <h2>Users Created by {{ user.username }}</h2>
+    {% if created_users %}
+        <ul>
+            {% for created_user in created_users %}
+                <li>
+                    {{ created_user.username }} - {{ created_user.email }} 
+                    <ul>
+                        {% for group in created_user.groups.all %}
+                            <li>{{ group.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users created.</p>
+    {% endif %}
+{% endblock %}

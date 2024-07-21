@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+
+{% block title %}Permission Error{% endblock %}
+
+{% block content %}
+    <div class="alert alert-danger" role="alert">
+        You do not have permission to create this user.
+    </div>
+    <a href="{% url 'create_user' %}" class="btn btn-primary">Back</a>
+{% endblock %}
