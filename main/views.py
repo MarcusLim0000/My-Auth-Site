@@ -21,7 +21,7 @@ def create_user(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             group = form.cleaned_data.get('group')
-            
+            # Below are conditionals to check the group status of the logged in user, and if fails redirects to permission_error.html
             # Check if the user is trying to create a Head Office user without permission
             if group and group.name == 'Head Office' and not request.user.groups.filter(name='Head Office').exists():
                 return redirect('permission_error')
@@ -55,11 +55,11 @@ def register(request):
             # Automatically assign the "Head Office" group to the new user
             head_office_group = Group.objects.get(name='Head Office')
             user.groups.add(head_office_group)
-            auth_login(request, user)  # Optional: log the user in after registration
-            return redirect('home')  # Redirect to a success page or the home page
+            auth_login(request, user)  # Logs the user in after registration
+            return redirect('home')
     else:
         form = RegisterForm()
-    return render(request, 'main/register.html', {'form': form})
+    return render(request, 'main/register.html', {'form': form}) #If authorization fails, redirect to register.html
 
 def view(request):
     # Fetch users created by the logged-in user
