@@ -10,7 +10,7 @@
 ## User Groups and Permissions
 1. **Head Office**: 
     - Head office accounts are created by registering first.
-    - Once logged in, Head Office users can create multiple accounts and assign groups to them using the “Create new user” link on the side navbar.
+    - Once logged in, Head Office users can create multiple accounts using the “Create new user” link on the side navbar.
     - They can also view a list of the users they have created using the “View” link.
 2. **District Office**:
     - District Office accounts can create Branch Office accounts but cannot create other Head Office or District Office accounts.
